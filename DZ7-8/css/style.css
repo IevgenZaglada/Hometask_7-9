@@ -20,27 +20,62 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'open_sanslight';
+    src: url('../fonts/OpenSans/opensans-light-webfont.eot');
+    src: url('../fonts/OpenSans/opensans-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans/opensans-light-webfont.woff2') format('woff2'),
+         url('../fonts/OpenSans/opensans-light-webfont.woff') format('woff'),
+         url('../fonts/OpenSans/opensans-light-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sansbold';
+    src: url('../fonts/OpenSansBold/opensans-bold-webfont.eot');
+    src: url('../fonts/OpenSansBold/opensans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSansBold/opensans-bold-webfont.woff2') format('woff2'),
+         url('../fonts/OpenSansBold/opensans-bold-webfont.woff') format('woff'),
+         url('../fonts/OpenSansBold/opensans-bold-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+ 
 @media (min-width: 960px) {
 
 body {
 	height: 2300px;
 	background: url(../img/background.jpg);
 }
+
 .wrapper {
-    position: relative;
-    overflow: hidden;
-    margin-top: 60px;
-    width: 960px;
-} 
+	width: 	100%;
+	position: relative;
+	overflow: hidden;
+}
 
 /*HEADER*/
 .header {
-	width: 960px;
-	position: relative;
-	overflow: hidden;
+	width: 100%;
 	height: 272px;
-	margin: 0 auto;
 	font-family: 'league_gothicregular';
+}
+
+.test_unit {
+	margin: 0 auto;
+	height: 100%;
+	width: 940px;
+	position: relative;
+}
+
+.first_row {
+	width: 940px;
+	overflow: hidden;
+	position: absolute;
+	top: 31%;
+	transform: translateY(-50%);
 }
 
 .titleInHeader {
@@ -59,12 +94,12 @@ body {
     -webkit-background-clip: text;
     color: transparent;
 	text-shadow: none;
-	margin-left: -6px;
+	margin-left: -8px;
 }
 
 .first_menu {
 	float: right;
-	width: 74%;
+	width: 72%;
 	position: relative;
 	overflow: hidden;
 }
@@ -73,11 +108,15 @@ body {
 	display: inline-block;
 	box-sizing: border-box;
 	letter-spacing: -0.8px;
-	padding: 8px 28px;
+	padding: 8px 26px;
 }
 
 .menu__list {
 	text-align: right; 
+}
+
+.nested_list {
+	display: none;
 }
 
 .menu__item:last-child {
@@ -108,12 +147,16 @@ body {
 .box {
 	margin: 0 auto;
 	height: 400px;
+	width: 940px;
+	position: relative;
 }
 
 .text {
-	width: 53%;
+	width: 55%;
 	float: left;
-	margin-top: 88px;
+	position: absolute;
+	top: 51%;
+	transform: translateY(-50%);
 }
 
 .fish {
@@ -132,7 +175,7 @@ body {
 
 .text .much_text {
     color: #ffffff;
-    font-family: 'Open sans';
+    font-family: 'open_sanslight';
     line-height: 24px;
 }
 .slider {
@@ -140,7 +183,7 @@ body {
 	height: 400px;
 	float: right;
 	overflow: hidden;
-	width: 35%;
+	width: 33%;
 }
 
 .iphone {
@@ -158,9 +201,35 @@ body {
 .box1 {
 	height: 168px;
 	margin: 0 auto;
-	text-align: right;
-	width: 39%;
+	width: 40%;
 	line-height: 220px;
+}
+
+.rings_list {
+	position: relative;
+	overflow: hidden;
+	float: right;
+	top: 91px;
+	right: 4px;
+}
+
+.rings_elements {
+    float: left;
+}
+
+.ring_link {
+	display: block;
+	width: 22px;
+	height: 18px;
+	background: url(../img/sprite_rings.png) 0 0 no-repeat;
+}
+
+.special_link {
+	background-position: -44px 0;
+}
+
+.ring_link:hover {
+	background-position: 0 -18px;
 }
 
 /*end of Section*/
@@ -180,32 +249,34 @@ body {
 	height: 340px;
 	margin: 0 auto;
 	text-align: center;
+	width: 940px;
+	position: relative;
 }
 
 .text_about_company {
     text-align: center;
-    margin-top: 45px;
+    position: absolute;
+    top: 51%;
+    transform: translateY(-50%);
 }
 
 .left_side, .center_side, .right_side {
-	width: 25%;
+	width: 31%;
 	display: inline-block;
 	text-align: left;
 }
 
 .left_side {
 	float: left;
-	margin-left: 65px;
 }
 
 .center_side {
-    margin-left: 16px;
+    position: relative;
+    left: 6px;
 }
 
 .right_side {
 	float: right;
-	position: relative;
-	left: 6px;
 }
 
 .title_company {
@@ -213,25 +284,50 @@ body {
 	text-transform: uppercase;
 	color: white;
 	font-family: 'league_gothicregular';
-	letter-spacing: 0.5px;
 	padding-bottom: 6px;
 }
 
+.title_company_left {
+	float: left;
+	padding-left: 36px;
+	letter-spacing: 0px;
+	padding-top: 5px;
+}
+
+.title_company_center {
+    padding-top: 5px;
+    letter-spacing: 0px;
+    text-align: center;
+}
+
 .title_company_right {
-	padding-left: 14px;
+    float: left;
+    padding-left: 63px;
+    padding-top: 5px;
+    letter-spacing: 0;
 }
 
 .company_text {
 	font-size: 16px;
 	color: #e7e4e8;
 	text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
-	font-family: 'Open Sans';
+	font-family: 'open_sanslight';
 	line-height: 25px;
+	display: block;
+	padding-left: 64px;
+	float: left;
+}
+
+.company_text_center {
+    display: block;
+    padding-left: 73px;
+    letter-spacing: -0.3px;
 }
 
 .company_text_right {
-	padding-left: 14px;
 	display: block;
+	letter-spacing: -1px;
+	padding-left: 94px;
 }
 
 .read_more {
@@ -241,61 +337,53 @@ body {
 	color: white;
 	text-transform: uppercase;
 	float: right;
-	padding-top: 16px;
+	padding-top: 17px;
+	padding-right: 6px;
 }
 
 .read_more_left {
-	padding-right: 23px;
+	padding-right: 10px;
 }
 
 .read_more_center {
-	padding-right: 16px;
+    padding-right: 0px;
+}
+
+.read_more_right {
 }
 
 .read_more:hover {
 	text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
 }
 
-.sprites {
-    width: 100%;
-    height: 30px;
-    position: relative;
-    overflow: hidden;
-    top: 82px;
-    left: 13px;
-}
-
 .sprite {
-    display: block;
-    height: 30px;   
-}
-
-.icons {
-	width: 33%;
-	float: left;
-	position: relative;
-	overflow: hidden;
-}
-
-.picture {
-	float: left;
 	background: url(../img/sprites.png) 0 0 no-repeat;
-	height: 30px;
-	width: 10%;
-	display: block;
+	float: left;
+	overflow: hidden;
+	width: 30px;
+	height: 35px;
+}
+
+.key {
+    position: relative;
+    top: 11px;
+    left: 12px;
 }
 
 .icon {
-    background-position: -32px 0;
-    position: relative;
-    left: 20px;
+	background-position: -30px 0;
+	position: relative;
+	top: 11px;
+	left: 20px;
 }
 
 .music {
-    background-position: -62px 0;
-    position: relative;
-    left: 40px;
+	background-position: -60px 0;
+	position: relative;
+	top: 10px;
+	left: 36px;
 }
+
 /*end of MAIN*/
 
 /*NEWS*/
@@ -313,24 +401,35 @@ body {
 .box2 {
 	height: 485px;
 	margin: 0 auto;
+	width: 940px;
+	position: relative;
 }
 
 .left_side_of_news {
 	width: 50%;
 	float: left;
+	position: absolute;
+	top: 54%;
+	transform: translateY(-50%);
+	height: 68%;
 }
 
 .right_side_of_news {
 	width: 50%;
 	float: right;
+	position: absolute;
+	top: 56%;
+	transform: translateY(-50%);
+	left: 49.5%;
+	overflow: hidden;
+	height: 60%;
 }
 
 .recall {
-	width: 94%;
+	width: 96%;
 	height: 295px;
     background: url(../img/man_backg.png) 0 0 no-repeat;
 	float: left;
-	margin-top: 99px;
 }
 
 .start {
@@ -354,14 +453,13 @@ body {
 	text-shadow: none;
 	display: block;
 	padding-left: 64px;
-	padding-right: 30px;
+	padding-right: 30px;;
 }
 
 .update {
-	width: 93%;
+	width: 90%;
 	height: 240px;
 	float: right;
-	margin-top: 127px;
 }
 
 .updates {
@@ -377,24 +475,23 @@ body {
 
 .update_item {
 	float: left;
-	width: 90%;
-	padding-bottom: 7px;
+	width: 100%;
+	padding-bottom: 9px;
 }
 
 .pictures {
 	float: left;
-	padding-right: 18px;
 	padding-top: 9px;
+	padding-right: 18px;
 }
 
 .nunc-turpis {
-	font-family: 'Open Sans';
 	font-size: 16px;
 	float: left;
-	line-height: 42px;
+	line-height: 40px;
 	color: #454545;
-	font-weight: bold;
-	letter-spacing: 1.2px;
+	letter-spacing: 0.4px;
+	font-family: 'open_sansbold';
 }
 
 .updates_text {
@@ -402,8 +499,8 @@ body {
 	display: block;
 	float: left;
 	font-size: 14px;
-	font-family: 'Open Sans';
-	letter-spacing: 0.13px;
+	font-family: 'open_sanslight';
+	letter-spacing: 0.5px;
 }
 
 .updates_text_first:after {
@@ -420,10 +517,36 @@ body {
 
 .box3 {
 	margin-top: 0;
-	width: 100%;
+	width: 96%;
 	float: left;
 	text-align: center;
 	clear: both;
+}
+
+.rings_list_white {
+	overflow: hidden;
+	position: relative;
+	float: right;
+	width: 57%;
+}
+
+.rings_elements_white {
+    float: left;
+}
+
+.ring_link_white {
+	display: block;
+	width: 22px;
+	height: 20px;
+	background: url(../img/sprite_rings1.png) 0 0 no-repeat;
+}
+
+.special_link_white {
+	background-position: -22px 0;
+}
+
+.ring_link_white:hover {
+	background-position: 0 -20px;
 }
 
 .read_more_here {
@@ -432,8 +555,7 @@ body {
 	font-size: 18px;
 	float: right;
 	display: block;
-	top: 8px;
-	right: 20px;
+	top: 10px;
 	position: relative;
 }
 
@@ -454,9 +576,18 @@ body {
 }
 
 .logo {
-	margin: 25px auto 0;
-	height: 95px;
-	text-align: center;
+	width: 940px;
+	position: relative;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.logos {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10%;
+
 }
 
 /*end of Logo in line*/
@@ -470,16 +601,24 @@ body {
 }
 
 .columns {
-	height: 100%;
 	text-align: center;
+	width: 940px;
 	margin: 0 auto;
+	height: 100%;
+	position: relative;
 }
+
+.wrapping_unit {
+	position: absolute;
+	top: 51%;
+	transform: translateY(-50%);
+}
+
 .column_about_company {
 	width: 31%;
-	height: 50%;
+	height: 53%;
 	display: inline-block;
 	text-align: left;
-	margin: 95px 0;
 }
 
 .left_column {
@@ -488,8 +627,7 @@ body {
 
 .comments_cat {
 	color: #454545;
-	padding-bottom: 10px;
-	padding-left: 10px;
+	padding-bottom: 12px;
 	letter-spacing: 0.2px;
 }
 
@@ -497,7 +635,7 @@ body {
 	font-family: 'league_gothicregular';
 	color: #454545;
 	text-shadow: 1px 0px 1px rgba(150, 150, 150, 1);
-	padding-bottom: 10px;
+	padding-bottom: 6px;
 }
 
 .greyword {
@@ -509,24 +647,34 @@ body {
 	font-family: georgia;
 	font-style: italic;
 	color: rgba(197, 197, 197, 0.5);
+	line-height: 31px;
 }
 
 .ping_text {
 	text-shadow: none;
 	float: left;
 	color: #787878;
-	padding-top: 12px;
 	line-height: 24px;
-	letter-spacing: 0.3px;
+	letter-spacing: 0.18px;
+	padding-left: 0px;
 }
 
-.comments_text {
+.comments_text_center {
 	color: #787878;
 	text-shadow: none;
 	line-height: 24px;
 	display: block;
-	padding-left: 13px;
-	letter-spacing: 0.05px;
+	letter-spacing: -0.1px;
+	padding-left: 0px;
+}
+
+.comments_text_right {
+	color: #787878;
+	text-shadow: none;
+	line-height: 24px;
+	display: block;
+	letter-spacing: -0.1px;
+	padding-left: 0px;	
 }
 
 .right_column {
@@ -542,6 +690,7 @@ body {
 .last_row {
 	height: 100%;
 	margin: 0 auto;
+	width: 940px;
 }
 
 .last_menu {
@@ -568,17 +717,17 @@ body {
 	display: block;
 	color: #fff;
 	line-height: 118px;
-	font-family: "Open Sans";
+	font-family: "open_sanslight";
 	float: right;
 	text-align: right;
 	font-size: 12px;
 }
 
 .bold_design {
-	font-weight: bold;
+    font-family: 'open_sansbold';
 }
 }
-
+ 
 
 
 
@@ -590,20 +739,33 @@ body {
 	height: 2300px;
 	background: url(../img/background.jpg);
 }
+
 .wrapper {
-    position: relative;
-    overflow: hidden;
-    width: 728px;
-    margin: 60px auto 0;
+	width: 	100%;
+	position: relative;
+	overflow: hidden;
 } 
 
 /*HEADER*/
 .header {
 	width: 100%;
-	position: relative;
-	overflow: hidden;
-	height: 238px;
+	height: 244px;
 	font-family: 'league_gothicregular';
+}
+
+.test_unit {
+	margin: 0 auto;
+	height: 100%;
+	width: 728px;
+	position: relative;
+}
+
+.first_row {
+	width: 728px;
+	overflow: hidden;
+	position: absolute;
+	top: 54%;
+	transform: translateY(-50%);
 }
 
 .titleInHeader {
@@ -634,6 +796,10 @@ body {
 
 .menu__list {
     line-height: 80px;
+}
+
+.nested_list {
+	display: none;
 }
 
 .menu__item {
@@ -671,16 +837,17 @@ body {
 	margin: 0 auto;
 	height: 400px;
 	width: 728px;
+	position: relative;
 }
 
 .text {
 	width: 41%;
 	float: left;
-	margin-top: 100px;
-	margin-left: 25px;
 	height: 185px;
-	position: relative;
-	overflow: hidden;
+	position: absolute;
+	top: 48%;
+	transform: translateY(-50%);
+	left: 4%;
 }
 
 .fish {
@@ -690,6 +857,7 @@ body {
 	font-size: 42px;
 	line-height: 49px;
 }
+
 .tagline {
 	font-size: 19px;
 	text-transform: uppercase;
@@ -705,11 +873,16 @@ body {
 
 .text .much_text {
     color: #ffffff;
-    font-family: 'Open sans';
     line-height: 25px;
     height: 100px;
-    letter-spacing: 1px;
+    letter-spacing: 1.4px;
+    font-family: 'open_sanslight';;
 }
+
+.extra_text_first {
+	display: none;
+}
+
 .slider {
 	position: relative;
 	height: 400px;
@@ -734,11 +907,34 @@ body {
 	height: 168px;
 	margin: 0 auto;
 	text-align: right;
-	width: 53%;
+	width: 67%;
 }
 
-.ringsInLine {
-    padding-top: 30px;
+.rings_list {
+	position: relative;
+	overflow: hidden;
+	float: right;
+	right: 70px;
+	top: 35px;
+}
+
+.rings_elements {
+    float: left;
+}
+
+.ring_link {
+	display: block;
+	width: 22px;
+	height: 18px;
+	background: url(../img/sprite_rings.png) 0 0 no-repeat;
+}
+
+.special_link {
+	background-position: -44px 0;
+}
+
+.ring_link:hover {
+	background-position: 0 -18px;
 }
 
 /*end of Section*/
@@ -751,40 +947,36 @@ body {
 	background: linear-gradient(0deg, #322539, #745083);
 	border-top: 1px solid #33253a;
 	border-bottom: 1px solid #0d151b;
-	position: relative;
 }
 
 .about_company {
+	width: 728px;
 	height: 340px;
 	margin: 0 auto;
 	text-align: center;
+	position: relative;
 }
 
 .text_about_company {
     text-align: center;
-    margin-top: 45px;
+    position: absolute;
+    top: 52%;
+    transform: translateY(-50%);
 }
 
 .left_side, .center_side, .right_side {
-	width: 25%;
+	width: 26%;
 	display: inline-block;
 	text-align: left;
 }
 
 .left_side {
 	float: left;
-	margin-left: 65px;
-}
-
-.center_side {
-	position: relative;
-	left: 11px;
+	padding-left: 33px;
 }
 
 .right_side {
 	float: right;
-	position: relative;
-	left: 19px;
 }
 
 .title_company {
@@ -796,14 +988,14 @@ body {
 }
 
 .title_company_right {
-	padding-left: 14px;
+	padding-left: 36px;
 }
 
 .company_text {
 	font-size: 16px;
 	color: #e7e4e8;
 	text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
-	font-family: 'Open Sans';
+	font-family: 'open_sanslight';
 	line-height: 23px;
 	height: 134px;
 	display: block;
@@ -813,7 +1005,7 @@ body {
 
 .company_text_right {
 	display: block;
-	padding-left: 14px;
+	padding-left: 6px;
 }
 
 .read_more {
@@ -827,15 +1019,15 @@ body {
 }
 
 .read_more_left {
-	padding-right: 36px;
+    padding-right: 11px;
 }
 
 .read_more_center {
-	padding-right: 37px;
+	padding-right: 12px;
 }
 
 .read_more_right {
-	padding-right: 22px;
+	padding-right: 4px;
 }
 
 .read_more:hover {
@@ -852,35 +1044,31 @@ body {
 }
 
 .sprite {
-    display: block;
-    height: 30px;   
-}
-
-.icons {
-	width: 33%;
 	float: left;
-	position: relative;
+	background: url(../img/sprites.png) 0 0 no-repeat;
+	height: 35px;
+	width: 30px;
 	overflow: hidden;
 }
 
-.picture {
-	float: left;
-	background: url(../img/sprites.png) 0 0 no-repeat;
-	height: 30px;
-	width: 13%;
-	display: block;
+.key {
+    position: relative;
+    top: 1px;
+    left: -21px;
 }
 
-
 .icon {
-    position: relative;
-    left: 12px;
+	position: relative;
+	top: 1px;
+	left: -21px;
 }
 
 .music {
-    position: relative;
-    left: 33px;
+	position: relative;
+	top: 1px;
+	left: -13px;
 }
+
 /*end of MAIN*/
 
 /*NEWS*/
@@ -898,18 +1086,26 @@ body {
 .box2 {
 	height: 485px;
 	margin: 0 auto;
+	width: 728px;
+	position: relative;
 }
 
 .left_side_of_news {
 	width: 46%;
-	height: 100%;
 	float: left;
+	position: absolute;
+	top: 53%;
+	transform: translateY(-50%);
 }
 
 .right_side_of_news {
 	width: 50%;
 	float: right;
-	height: 100%;
+	position: absolute;
+	top: 54%;
+	transform: translateY(-50%);
+	left: 50%;
+	overflow: hidden;
 }
 
 .recall {
@@ -917,7 +1113,6 @@ body {
 	height: 296px;
     background: url(../img/man_backg.png) 0 0 no-repeat;
 	float: left;
-	margin-top: 99px;
 }
 
 .start {
@@ -942,16 +1137,14 @@ body {
 	text-shadow: none;
 	display: block;
 	height: 145px;
-	letter-spacing: 0.5px;
 	padding-left: 66px;
-	padding-right: 22px;
+	padding-right: 18px;
 }
 
 .update {
 	width: 94%;
 	height: 245px;
 	float: right;
-	margin-top: 131px;
 }
 
 .updates {
@@ -978,13 +1171,11 @@ body {
 }
 
 .nunc-turpis {
-	font-family: 'Open Sans';
+	font-family: 'open_sansbold';
 	font-size: 16px;
 	float: left;
 	line-height: 22px;
 	color: #454545;
-	font-weight: bold;
-	letter-spacing: 1.2px;
 	padding-left: 20px;
 	padding-bottom: 7px;
 }
@@ -994,7 +1185,7 @@ body {
 	display: block;
 	float: left;
 	font-size: 14px;
-	font-family: 'Open Sans';
+	font-family: 'open_sanslight';
 	padding-left: 20px;
 	letter-spacing: 1px;
 }
@@ -1004,6 +1195,32 @@ body {
 	float: left;
 	margin-top: 0;
 	text-align: right;
+}
+
+.rings_list_white {
+	overflow: hidden;
+	position: relative;
+	float: right;
+	width: 40%;
+}
+
+.rings_elements_white {
+    float: left;
+}
+
+.ring_link_white {
+	display: block;
+	width: 22px;
+	height: 20px;
+	background: url(../img/sprite_rings1.png) 0 0 no-repeat;
+}
+
+.special_link_white {
+	background-position: -22px 0;
+}
+
+.ring_link_white:hover {
+	background-position: 0 -20px;
 }
 
 .read_more_here {
@@ -1029,6 +1246,7 @@ body {
 	padding-right: 39px;
 	letter-spacing: 0.2px;
 }
+
 /*end of NEWS*/
 
 /*Logo in line*/
@@ -1042,14 +1260,19 @@ body {
 }
 
 .logo {
-    height: 95px;
+	width: 728px;
+	height: 100%;
     margin: 0 auto;
     text-align: center;
-    margin-top: 27px;
+    position: relative;
 }
 
 .logos {
+	position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 	width: 99%;
+	left: 1%;
 }
 
 /*end of Logo in line*/
@@ -1066,13 +1289,20 @@ body {
 	height: 100%;
 	text-align: center;
 	margin: 0 auto;
+	width: 728px;
+	position: relative;
 }
+
+.wrapping_unit {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
 .column_about_company {
 	width: 31%;
-	height: 50%;
 	display: inline-block;
 	text-align: left;
-	margin: 95px 0;
 }
 
 .left_column {
@@ -1115,12 +1345,22 @@ body {
 	height: 83%;
 }
 
-.comments_text {
+.comments_text_center {
 	color: #787878;
 	text-shadow: none;
 	line-height: 24px;
 	letter-spacing: 0.25px;
-	height: 83%;
+	display: block;
+	height: 58%;
+}
+
+.comments_text_right {
+	color: #787878;
+	text-shadow: none;
+	line-height: 24px;
+	letter-spacing: 0.25px;
+	display: block;
+	height: 65%;
 }
 
 .central_column {
@@ -1135,6 +1375,7 @@ body {
 	left: 28px;
 	top: 5px;
 }
+
 /*end of columns*/
 
 .footer {
@@ -1143,6 +1384,7 @@ body {
 	height: 201px;
 }
 .last_row {
+	width: 728px;
 	height: 100%;
 	margin: 0 auto;
 }
@@ -1165,7 +1407,7 @@ body {
 	width: 20%;
 	display: block;
 	color: #fff;
-	font-family: "Open Sans";
+	font-family: "open_sanslight";
 	float: right;
 	text-align: right;
 	line-height: 220px;
@@ -1173,10 +1415,9 @@ body {
 }
 
 .bold_design {
-	font-weight: bold;
+	font-family: 'open_sansbold';
 }
 }
-
 
 
 
@@ -1191,16 +1432,33 @@ body {
 	background: url(../img/background.jpg);
 }
 .wrapper {
-    width: 440px;
-    margin: 60px auto 0;
+	width: 	100%;
+	position: relative;
+	overflow: hidden;
 } 
 
 /*HEADER*/
 .header {
 	width: 100%;
-	height: 138px;
+	height: 203px;
 	font-family: 'league_gothicregular';
 	position: relative;
+}
+
+.test_unit {
+	margin: 0 auto;
+	height: 100%;
+	width: 440px;
+	position: relative;
+}
+
+.first_row {
+	width: 440px;
+	overflow: hidden;
+	position: absolute;
+	top: 112%;
+	transform: translateY(-50%);
+	z-index: 2;
 }
 
 .titleInHeader {
@@ -1231,47 +1489,66 @@ body {
     text-align: center;
 }
 
-.menu {
-    height: 100%;
-    border: 1px solid #061925;
-    border-radius: 10px;
-    background-color: rgba(60, 48, 68, 0.8);
-    z-index: 15;
+.nested_list {
+	display: none;
+	border: 1px solid #061925;
+    border-radius: 0 0 10px 10px;
+    background-color: rgba(60, 48, 68, 0.4);
+   	height: 205px;
 }
 
-.menu__list {
-    height: 100%;
+.nested_list_item {
+	height: 19.05%;
+	border-top: 1px solid #503d58;
+	border-bottom: 1px solid #36283e;
 }
 
-.menu__item {
-    box-sizing: border-box;
-    height: 16.7%;
-    border-top: 1px solid #503d58;
-    border-bottom: 1px solid #36283e;;
+.menu__link, .nested_list_link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    line-height: 46px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 1px rgba(150, 150, 150, 1);
 }
 
-.menu__item:first-child, .menu__item:last-child {
-	border-radius: 10px;
-}
-
-.menu__link {
-	color: white;
-	text-shadow: 2px 2px 1px rgba(150, 150, 150, 1);
-	font-size: 24px;
-	text-transform: uppercase;
-	text-decoration: none;
-	line-height: 46px;
-}
-
-.menu__link:hover {
-	border-bottom: 2px solid #edbfff;
-}
-
-.menu__item:hover {
+.nested_list_item:hover {
 	background-color: #221a27;
 	border-bottom: 2px solid #edbfff;
 	cursor: pointer;
 }
+
+.nested_list_item:last-child {
+	border-radius: 10px;
+	border-bottom: none;
+}
+
+.menu__item {
+    display: none;
+}
+
+.menu__item:first-child {
+	border-radius: 10px;
+}
+
+.menu__link {
+    border-bottom: 2px solid #edbfff;
+}
+
+.menu__list .home-special_word {
+	display: block;
+}
+
+.home-special_word:hover .nested_list {
+	display: block;
+}
+
+.menu__item:hover {
+	background-color: rgba(60, 48, 68, 0.8);
+	border-bottom: 2px solid #edbfff;
+	cursor: pointer;
+}
+
 /*end of HEADER*/
 
 /*Section*/
@@ -1285,14 +1562,17 @@ body {
 .box {
 	margin: 0 auto;
 	height: 246px;
+	width: 440px;
+	position: relative;
 }
 
 .text {
 	width: 50%;
 	float: left;
-	margin-top: 102px;
-	margin-left: 19px;
-	height: 142px;
+	position: absolute;
+	top: 61%;
+	transform: translateY(-50%);
+	left: 4%;
 }
 
 .fish {
@@ -1300,7 +1580,7 @@ body {
 	color: #fefefe;
 	font-size: 30px;
 	line-height: 20px;
-	letter-spacing: -3px;
+	letter-spacing: -2px;
 }
 .tagline {
 	font-size: 21px;
@@ -1342,11 +1622,33 @@ body {
 	height: 98px;
 	margin: 0 auto;
 	text-align: center;
+	width: 440px;
 }
 
-.ringsInLine {
-    padding-left: 5px;
-    padding-top: 14px;
+.rings_list {
+	position: relative;
+	overflow: hidden;
+	top: 20px;
+	display: inline-block;
+}
+
+.rings_elements {
+    float: left;
+}
+
+.ring_link {
+	display: block;
+	width: 22px;
+	height: 18px;
+	background: url(../img/sprite_rings.png) 0 0 no-repeat;
+}
+
+.special_link {
+	background-position: -44px 0;
+}
+
+.ring_link:hover {
+	background-position: 0 -18px;
 }
 
 /*end of Section*/
@@ -1359,10 +1661,10 @@ body {
 	background: linear-gradient(0deg, #322539, #745083);
 	border-top: 1px solid #37293e;
 	border-bottom: 1px solid #12191f;
-	position: relative;
 }
 
 .about_company {
+	width: 440px;
 	height: 598px;
 	margin: 0 auto;
 	text-align: center;
@@ -1371,21 +1673,16 @@ body {
 }
 
 .text_about_company {
-    float: right;
-    width: 90%;
-    height: 87%;
-    margin-top: 77px;
+    position: absolute;
+    top: 53%;
+    transform: translateY(-50%);
 }
 
 .left_side, .center_side, .right_side {
 	width: 90%;
 	text-align: left;
-	height: 20%;
 	display: inline-block;
-}
-
-.left_side, .center_side {
-    margin-bottom: 54px;
+	margin-bottom: 42px;
 }
 
 .title_company {
@@ -1394,17 +1691,18 @@ body {
 	color: white;
 	font-family: 'league_gothicregular';
 	padding-bottom: 6px;
+	padding-left: 39px;
 }
 
 .company_text {
 	font-size: 16px;
 	color: #e7e4e8;
 	text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
-	font-family: 'Open Sans';
+	font-family: 'open_sanslight';
 	line-height: 23px;
-	height: 85px;
 	display: block;
 	letter-spacing: -0.3px;
+	padding-left: 39px;
 }
 
 .company_text_right {
@@ -1419,7 +1717,8 @@ body {
 	text-transform: uppercase;
 	float: right;
 	position: relative;
-	right: -13px;
+	right: -14px;
+	top: 12px;
 }
 
 .read_more:hover {
@@ -1427,37 +1726,37 @@ body {
 }
 
 .sprites {
-    float: left;
-    width: 10%;
-    height: 100%;
+    width: 100%;
+    height: 30px;
+    position: relative;
+    overflow: hidden;
+    top: 79px;
+    left: 13px;
 }
 
 .sprite {
-    height: 100%;   
-}
-
-.icons {
-    width: 100%;
-    float: left;
-}
-
-.picture {
-	width: 100%;
-	background: url(../img/sprites1.png) 0 0 no-repeat;
-	display: block;
 	float: left;
-	height: 30px;
-	position: relative;
-	top: 78px;
-	left: 10px;
+	background: url(../img/sprites.png) 0 0 no-repeat;
+	height: 35px;
+	width: 30px;
+	overflow: hidden;
+}
+
+.key {
+    position: relative;
+    top: 1px;
+    left: -13px;
 }
 
 .icon {
-    top: 205px;
+	position: relative;
+	top: -2px;
+	left: -12px;
 }
 
 .music {
-    top: 336px;
+	position: relative;
+	left: -13px;
 }
 /*end of MAIN*/
 
@@ -1465,7 +1764,7 @@ body {
 
 .news {
 	width: 100%;
-	height: 787px;
+	height: 785px;
 	background-color: #f9f9f9;
 	position: relative;
 	overflow: hidden;
@@ -1476,13 +1775,31 @@ body {
 .box2 {
 	height: 785px;
 	margin: 0 auto;
+	width: 440px;
+	position: relative;
+}
+
+.left_side_of_news {
+	width: 100%;
+	float: left;
+	position: absolute;
+	top: 29%;
+	transform: translateY(-50%);
+}
+
+.right_side_of_news {
+	width: 100%;
+	float: left;
+	position: absolute;
+	top: 72%;
+	transform: translateY(-50%);
+	overflow: hidden;
 }
 
 .recall {
 	width: 100%;
 	height: 295px;
 	float: left;
-	margin-top: 70px;
 	background: url(../img/man_backg1.png) 0 0 no-repeat;
 }
 
@@ -1527,7 +1844,7 @@ body {
 .updates {
 	color: #454545;
 	font-size: 30px;
-	padding-left: 11px;
+	padding-left: 9px;
 	padding-bottom: 14px;
 }
 
@@ -1546,15 +1863,14 @@ body {
 }
 
 .nunc-turpis {
-	font-family: 'Open Sans';
+	font-family: 'open_sansbold';
 	font-size: 16px;
 	float: left;
 	line-height: 22px;
 	color: #454545;
-	font-weight: bold;
-	letter-spacing: 1.2px;
-	padding-left: 20px;
+	padding-left: 16px;
 	padding-bottom: 7px;
+	letter-spacing: 0.2px;
 }
 
 .updates_text {
@@ -1562,17 +1878,9 @@ body {
 	display: block;
 	float: left;
 	font-size: 14px;
-	font-family: 'Open Sans';
+	font-family: 'open_sanslight';
 	padding-left: 19px;
 	letter-spacing: 1px;
-}
-
-.left_side_of_news {
-	height: 55%
-}
-
-.right_side_of_news {
-	height: 45%;
 }
 
 .box3 {
@@ -1580,7 +1888,32 @@ body {
 	float: left;
 	position: relative;
 	text-align: center;
-	margin-top: 0;
+}
+
+.rings_list_white {
+	overflow: hidden;
+	position: relative;
+	float: right;
+	width: 60%;
+}
+
+.rings_elements_white {
+    float: left;
+}
+
+.ring_link_white {
+	display: block;
+	width: 22px;
+	height: 20px;
+	background: url(../img/sprite_rings1.png) 0 0 no-repeat;
+}
+
+.special_link_white {
+	background-position: -22px 0;
+}
+
+.ring_link_white:hover {
+	background-position: 0 -20px;
 }
 
 .read_more_here {
@@ -1603,6 +1936,7 @@ body {
 	padding-right: 39px;
 	letter-spacing: 0.2px;
 }
+
 /*end of NEWS*/
 
 /*Logo in line*/
@@ -1616,8 +1950,10 @@ body {
 }
 
 .logo {
+	width: 440px;
     height: 232px;
     margin: 0 auto;
+    position: relative;
     background: url(../img/logos1.png) 46px 36px no-repeat;
 }
 
@@ -1631,27 +1967,41 @@ body {
 
 .column {
 	width: 100%;
-	height: 668px;
+	height: 669px;
 	background-color: #ececec;
 	border-top: 1px solid #d8d8d8;
 	box-sizing: border-box;
 }
 
 .columns {
-	height: 90%;
+	width: 440px;
+	height: 100%;
 	text-align: center;
-	margin: 66px auto 0;
+	margin: 0 auto;
+	position: relative;
 }
+
+.wrapping_unit {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
 .column_about_company {
 	width: 100%;
-	height: 30%;
 	text-align: left;
-	margin-bottom: 12px;
+	display: block;
+	float: left;
+	margin-bottom: 30px;
+}
+
+.left_column {
 }
 
 .comments_cat {
 	color: #454545;
 	padding-bottom: 10px;
+	padding-left: 0;
 }
 
 .greyback {
@@ -1676,6 +2026,7 @@ body {
 	color: #787878;
 	line-height: 24px;
 	letter-spacing: 0.3px;
+	padding-left: 0;
 }
 
 .comments_text {
@@ -1685,6 +2036,26 @@ body {
 	letter-spacing: -1px;
 }
 
+.comments_text_center {
+	color: #787878;
+	text-shadow: none;
+	line-height: 24px;
+	letter-spacing: 0.25px;
+	display: block;
+	height: 58%;
+	padding-left: 0;
+}
+
+.comments_text_right {
+	color: #787878;
+	text-shadow: none;
+	line-height: 24px;
+	letter-spacing: 0.25px;
+	display: block;
+	height: 65%;
+	padding-left: 0;
+}
+
 /*end of columns*/
 
 .footer {
@@ -1692,14 +2063,17 @@ body {
 	width: 100%;
 	height: 201px;
 }
+
 .last_row {
 	height: 100%;
 	margin: 0 auto;
+	width: 440px;
 }
 
 .last_menu {
 	width: 100%;
 	height: 100px;
+	float: left;
 }
 
 .menu_foot {
@@ -1716,12 +2090,21 @@ body {
 	letter-spacing: -1.5px;
 	line-height: 114px;
 	height: 100%;
-	padding-right: 22px;
+	padding-right: 25px;
 	float: left;
+	display: block;
+}
+
+.menu_foot__item:last-child {
+	padding-right: 0;
+}
+
+.menu_foot__link {
+	border-bottom: none;
 }
 
 .menu_foot__link:hover {
-	border-bottom: none;
+	border-bottom: 2px solid #edbfff;
 }
 
 .menu_foot__item:hover {
@@ -1733,17 +2116,17 @@ body {
 .design {
 	width: 100%;
 	color: #fff;
-	font-family: "Open Sans";
+	font-family: "open_sanslight";
 	text-align: center;
 	display: inline-block;
 	letter-spacing: -1.5px;
+	float: left;
 }
 
 .bold_design {
-	font-weight: bold;
+	font-family: 'open_sansbold';
 }
 }
-
 
 
 
@@ -1756,16 +2139,33 @@ body {
 	height: 2458px;
 }
 .wrapper {
-    width: 280px;
-    margin: 60px auto 0;
+    width: 	100%;
+	position: relative;
+	overflow: hidden;
 } 
 
 /*HEADER*/
 .header {
 	width: 100%;
-	height: 138px;
+	height: 204px;
 	font-family: 'league_gothicregular';
 	position: relative;
+}
+
+.test_unit {
+	margin: 0 auto;
+	height: 100%;
+	width: 280px;
+	position: relative;
+}
+
+.first_row {
+	width: 280px;
+	overflow: hidden;
+	position: absolute;
+	transform: translateY(-50%);
+	z-index: 2;
+	top: 112%;
 }
 
 .titleInHeader {
@@ -1791,8 +2191,42 @@ body {
 
 .first_menu {
     width: 280px;
-    height: 56px;
+    height: 256px;
     text-align: center;
+}
+
+.nested_list {
+	display: none;
+	border: 1px solid #061925;
+    background-color: rgba(60, 48, 68, 0.4);
+   	height: 205px;
+	border-radius: 0 0 10px 10px;
+}
+
+.nested_list_item {
+	height: 19.05%;
+	border-top: 1px solid #503d58;
+	border-bottom: 1px solid #36283e;
+}
+
+.menu__link, .nested_list_link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    line-height: 46px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 1px rgba(150, 150, 150, 1);
+}
+
+.nested_list_item:hover {
+	background-color: #221a27;
+	border-bottom: 2px solid #edbfff;
+	cursor: pointer;
+}
+
+.nested_list_item:last-child {
+	border-radius: 10px;
+	border-bottom: none;
 }
 
 .menu__item {
@@ -1800,8 +2234,26 @@ body {
 }
 
 .menu__item:first-child {
+	border-radius: 10px;
+}
+
+.menu__link {
+    border-bottom: 2px solid #edbfff;
+}
+
+.menu__list .home-special_word {
 	display: block;
-} 
+}
+
+.home-special_word:hover .nested_list {
+	display: block;
+}
+
+.menu__item:hover {
+	background-color: rgba(60, 48, 68, 0.8);
+	border-bottom: 2px solid #edbfff;
+	cursor: pointer;
+}
 
 .menu__link {
 	color: white;
@@ -1816,6 +2268,7 @@ body {
 	border-bottom: 2px solid #edbfff;
 	cursor: pointer;
 }
+
 /*end of HEADER*/
 
 /*Section*/
@@ -1825,17 +2278,20 @@ body {
 	font-family: 'oswald_regularregular';
 	width: 100%;
 }
+
 .box {
 	margin: 0 auto;
-	height: 212px;
+	height: 278px;
+	width: 280px;
+	position: relative;
 }
 
 .text {
 	width: 100%;
-	float: left;
-	text-align: center;
-	height: 100px;
-	margin-top: 100px;
+	position: absolute;
+	top: 47%;
+	transform: translateY(-50%);
+	left: 16%;
 }
 
 .fish {
@@ -1843,7 +2299,7 @@ body {
 	color: #fefefe;
 	font-size: 30px;
 	line-height: 21px;
-	letter-spacing: -1px;
+	letter-spacing: -1.5px;
 }
 .tagline {
 	font-size: 20px;
@@ -1861,7 +2317,7 @@ body {
 
 .text .much_text {
     display: none;
-    font-family: 'Open sans';
+    font-family: 'open_sanslight';
     line-height: 25px;
     letter-spacing: 1px;
 }
@@ -1879,12 +2335,35 @@ body {
 }
 
 .box1 {
-	height: 100px;
 	margin: 0 auto;
 	text-align: center;
-	line-height: 69px;
+	line-height: 50px;
+	width: 280px;
 }
 
+.rings_list {
+	overflow: hidden;
+	display: inline-block;
+}
+
+.rings_elements {
+    float: left;
+}
+
+.ring_link {
+	display: block;
+	width: 22px;
+	height: 18px;
+	background: url(../img/sprite_rings.png) 0 0 no-repeat;
+}
+
+.special_link {
+	background-position: -44px 0;
+}
+
+.ring_link:hover {
+	background-position: 0 -18px;
+}
 
 /*end of Section*/
 
@@ -1896,10 +2375,10 @@ body {
 	background: linear-gradient(0deg, #322539, #745083);
 	border-top: 1px solid #37293e;
 	border-bottom: 1px solid #12191f;
-	position: relative;
 }
 
 .about_company {
+	width: 280px;
 	height: 598px;
 	margin: 0 auto;
 	text-align: center;
@@ -1908,11 +2387,9 @@ body {
 }
 
 .text_about_company {
-    float: right;
-    width: 83%;
-    height: 88%;
-    margin-top: 70px;
-    margin-left: 5px;
+    position: absolute;
+    top: 52%;
+    transform: translateY(-50%);
 }
 
 .left_side, .center_side, .right_side {
@@ -1920,14 +2397,7 @@ body {
 	text-align: left;
 	height: 20%;
 	display: inline-block;
-}
-
-.left_side {
-    margin-bottom: 54px;
-}
-
-.center_side {
-    margin-bottom: 68px;
+	margin-bottom: 32px;
 }
 
 .title_company {
@@ -1938,14 +2408,19 @@ body {
 	padding-bottom: 6px;
 }
 
+.title_company_left, .title_company_center, .title_company_right {
+    padding-left: 47px;
+}
+
 .company_text {
 	font-size: 16px;
 	color: #e7e4e8;
 	text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
-	font-family: 'Open Sans';
+	font-family: 'open_sanslight';
 	line-height: 23px;
-	height: 85px;
 	display: block;
+	height: 85px;
+	padding-left: 47px;
 }
 
 .extra_text {
@@ -1970,39 +2445,40 @@ body {
 }
 
 .sprites {
-    float: left;
-    width: 15%;
-    height: 100%;
+    width: 100%;
+    height: 30px;
+    position: relative;
+    overflow: hidden;
+    top: 79px;
+    left: 13px;
 }
 
 .sprite {
-    height: 100%;   
-}
-
-.icons {
-    width: 100%;
-    float: left;
-    height: 33%;
-}
-
-.picture {
-	width: 100%;
-	background: url(../img/sprites1.png) 0 0 no-repeat;
-	display: block;
 	float: left;
-	height: 30px;
-	position: relative;
-	top: 72px;
-	left: 9px;
+	background: url(../img/sprites.png) 0 0 no-repeat;
+	height: 35px;
+	width: 30px;
+	overflow: hidden;
+}
+
+.key {
+    position: relative;
+    top: 5px;
+    left: -5px;
 }
 
 .icon {
-    top: 33px;
+	position: relative;
+	top: -2px;
+	left: -4px;
 }
 
 .music {
-    top: 7px;
+	position: relative;
+	left: -5px;
+	top: 5px;
 }
+
 /*end of MAIN*/
 
 /*NEWS*/
@@ -2020,15 +2496,32 @@ body {
 .box2 {
 	height: 785px;
 	margin: 0 auto;
+	width: 280px;
+	position: relative;
+}
+
+.left_side_of_news {
+	width: 100%;
+	float: left;
+	position: absolute;
+	top: 28%;
+	transform: translateY(-50%);
+}
+
+.right_side_of_news {
+	width: 100%;
+	float: left;
+	position: absolute;
+	top: 72%;
+	transform: translateY(-50%);
+	overflow: hidden;
 }
 
 .recall {
 	width: 100%;
-	height: 275px;
+	height: 285px;
 	float: left;
-	margin-top: 70px;
 	background: url(../img/man_backg1.png) 0 0 no-repeat;
-	margin-bottom: 20px;
 }
 
 .start {
@@ -2091,12 +2584,11 @@ body {
 }
 
 .nunc-turpis {
-	font-family: 'Open Sans';
+	font-family: 'open_sansbold';
 	font-size: 16px;
 	float: left;
 	line-height: 22px;
 	color: #454545;
-	font-weight: bold;
 	letter-spacing: 1.2px;
 	padding-left: 20px;
 	padding-bottom: 7px;
@@ -2107,17 +2599,9 @@ body {
 	display: block;
 	float: left;
 	font-size: 15px;
-	font-family: 'Open Sans';
+	font-family: 'open_sanslight';
 	letter-spacing: 0.3px;
 	padding-left: 18px;
-}
-
-.left_side_of_news {
-	height: 55%
-}
-
-.right_side_of_news {
-	height: 45%;
 }
 
 .box3 {
@@ -2127,6 +2611,33 @@ body {
 	margin-top: 0;
 	text-align: right;;
 }
+
+.rings_list_white {
+	overflow: hidden;
+	position: relative;
+	width: 44%;
+	float: right;
+}
+
+.rings_elements_white {
+    float: left;
+}
+
+.ring_link_white {
+	display: block;
+	width: 22px;
+	height: 20px;
+	background: url(../img/sprite_rings1.png) 0 0 no-repeat;
+}
+
+.special_link_white {
+	background-position: -22px 0;
+}
+
+.ring_link_white:hover {
+	background-position: 0 -20px;
+}
+
 
 .read_more_here {
 	display: block;
@@ -2148,6 +2659,7 @@ body {
 	padding-right: 6px;
 	letter-spacing: 0.2px;
 }
+
 /*end of NEWS*/
 
 /*Logo in line*/
@@ -2161,9 +2673,11 @@ body {
 }
 
 .logo {
+	width: 280px;
     height: 420px;
     margin: 0 auto;
     background: url(../img/logos_small.png) 19px 51px no-repeat;
+    position: relative;
 }
 
 .logos {
@@ -2186,6 +2700,7 @@ body {
 	height: 201px;
 }
 .last_row {
+	width: 280px;
 	height: 100%;
 	margin: 0 auto;
 }
@@ -2197,15 +2712,16 @@ body {
 .design {
 	width: 100%;
 	color: #fff;
-	font-family: "Open Sans";
 	text-align: center;
 	display: inline-block;
 	letter-spacing: 0.4px;
 	font-size: 12px;
 	line-height: 91px;
+	font-family: "open_sanslight";
 }
 
 .bold_design {
-	font-weight: bold;
+	font-family: 'open_sansbold';
 }
 }
+
